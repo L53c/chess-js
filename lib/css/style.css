@@ -1,0 +1,74 @@
+:root {
+  --light: rgb(228, 212, 173);
+  --light-alt: rgb(220, 192, 124);
+  --dark: rgb(143, 91, 9);
+  --dark-alt: rgb(105, 69, 11);
+  --board-border: rgb(48, 31, 4);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(49, 71, 49);
+  height: 96vh;
+
+  /* > main {
+    padding: 3rem;
+    border: 1px solid fuchsia;
+  } */
+}
+
+#gameboard {
+  width: 720px;
+  height: 720px;
+  border: 9px solid var(--board-border);
+  display: flex;
+  flex-wrap: wrap;
+
+  > .square {
+    height: 90px;
+    width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    > svg{
+      position: relative;
+      z-index: -9;
+    }
+
+    > path {
+      position: relative;
+      z-index: -10;
+    }
+    
+    > .piece {
+      position: relative;
+      z-index: -9;
+    }
+  }
+
+  > .light {
+    background-color: var(--light);
+    background-image: radial-gradient(var(--light), var(--light-alt));
+  }
+
+  > .dark {
+    background-color: var(--dark);
+    background-image: radial-gradient(var(--dark), var(--dark-alt));
+  }
+}
+
+.black {
+  fill: rgb(4, 33, 48);
+  stroke: var(--light-alt);
+  stroke-width: 0.9rem;
+}
+
+.white {
+  fill: rgb(221, 165, 68);
+  stroke: var(--board-border);
+  stroke-width: 1.5rem;
+}
